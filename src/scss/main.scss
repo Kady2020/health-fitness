@@ -1,0 +1,285 @@
+/*==================== RESET STYLES ====================*/
+@import 'reset';
+/*==================== RESET STYLES ====================*/
+
+/*==================== FONTS ====================*/
+@import 'fonts';
+/*==================== FONTS ====================*/
+
+/*==================== VARIABLES ====================*/
+$maxWidthLayout: 1440;
+$maxWidthContainer: 1200;
+$circularFont: 'Circular', sans-serif;
+$darkGrayColor: #333;
+$lightGrayColor: #555;
+$whiteColor: #fff;
+/*==================== VARIABLES ====================*/
+
+/*==================== MIXINS ====================*/
+
+// responsive font
+@mixin respFz($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $addMobSize: $addSize + $addSize * 0.7;
+  @media (max-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidthContainer}));
+  }
+  @media (min-width: 767px) {
+    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidthContainer}));
+  }
+}
+// @include respFz(40, 14);
+// responsive font
+
+// responsive value
+@mixin respValue($property, $startSize, $minSize, $type) {
+  $addSize: $startSize - $minSize;
+  @if $type==1 {
+    //Только если меньше контейнера
+    #{$property}: $startSize + px;
+    @media (max-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+    }
+  } @else if $type==2 {
+    //Только если больше контейнера
+    #{$property}: $startSize + px;
+    @media (min-width: #{$maxWidthContainer + px}) {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
+    }
+  } @else {
+    //Всегда
+    #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthLayout - 320}));
+  }
+}
+// @include respValue('padding', 30, 15, 1);
+// responsive value
+
+/*==================== MIXINS ====================*/
+
+/*==================== BASIC PARAMETERS ====================*/
+body {
+  font-family: $circularFont;
+  font-weight: 400;
+  background: $whiteColor;
+  color: $darkGrayColor;
+  @media (max-width: 768px) {
+    &.lock {
+      overflow: hidden;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.page {
+  flex: 1 1 auto;
+}
+/*==================== BASIC PARAMETERS ====================*/
+
+/*==================== REPEAT BLOCK ====================*/
+
+// container
+[class*='__container'] {
+  width: 100%;
+  max-width: $maxWidthContainer + px;
+  padding: 0 15px;
+  margin: 0 auto;
+  background: #e5e5e5;
+}
+// container
+
+// responsive background image
+@import 'ibg';
+
+.ibg {
+  position: relative;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+// responsive background image
+
+// main button
+.main-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  font-size: 17px;
+  line-height: 1.1;
+  border-radius: 5px;
+  transition: all 0.2s linear;
+  overflow: hidden;
+
+  &_bg_gray {
+    background: rgba(51, 51, 51, 1);
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1), 0px 64.8148px 46.8519px rgba(49, 49, 49, 0.0759259),
+      0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05),
+      0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(85, 85, 85, 1);
+      border-radius: 5px;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+      transition: all 0.2s linear;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &_bg_transp {
+    outline: 2px solid rgba(51, 51, 51, 1);
+    background: rgba(255, 255, 255, 0);
+    color: rgba(51, 51, 51, 1);
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2em;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(51, 51, 51, 0.1);
+      background: rgba(238, 238, 238, 0.5);
+      transform: translateX(-4em) skewX(-45deg);
+      transition: all 0.4s linear;
+    }
+
+    &:hover {
+      &::before {
+        animation: highlight 0.4s linear;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+@keyframes highlight {
+  0% {
+    transform: translateX(-4em) skewX(-45deg);
+  }
+  100% {
+    transform: translateX(10em) skewX(-45deg);
+  }
+}
+// main button
+
+// link button
+.link-button {
+  position: relative;
+  display: inline-block;
+  transition: all 0.2s linear;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1.1px;
+    bottom: -2px;
+    left: 0;
+    background: #333;
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center;
+    transition: all 0.2s linear;
+  }
+
+  &:hover {
+    color: #555;
+
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+// main button
+
+/*==================== REPEAT BLOCK ====================*/
+
+/*==================== HEADER ====================*/
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: all 0.4s linear;
+  font-size: 17px;
+  line-height: 1.2;
+
+  &__body {
+    display: grid;
+    // grid-template: minmax(100px, auto) / auto 1fr minmax(auto, 236px);
+    grid-template: minmax(100px, auto) / auto 1fr minmax(auto, 436px);
+    align-items: center;
+  }
+
+  &__logo {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+
+  &__menu {
+    justify-self: end;
+  }
+
+  &__menu-list {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 50px;
+  }
+
+  &__menu-link {
+  }
+
+  &__authorization {
+    display: grid;
+    grid-template: 1fr / 1fr 152px;
+    align-items: center;
+  }
+
+  &__sign-in {
+    justify-self: end;
+    padding: 0 30px 0 0;
+  }
+
+  &__sign-up {
+  }
+
+  &__burger {
+    display: none;
+  }
+}
+/*==================== HEADER ====================*/
