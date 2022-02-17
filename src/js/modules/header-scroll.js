@@ -5,10 +5,10 @@
 let headerScroll;
 window.onscroll = function () {
   headerScroll = window.pageYOffset || document.documentElement.scrollTop;
-  if (headerScroll > 140) {
-    $(".header").css({ "background": "#222" })
+  if (headerScroll > 150) {
+    $(".header").css({ "background": "rgba(238, 238, 238, 0.9)" })
   }
-  if (140 > headerScroll) {
+  if (150 > headerScroll) {
     $(".header").css({ "background": "none" })
   }
 }
