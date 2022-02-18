@@ -483,8 +483,38 @@ body {
   }
 }
 .intro__title {
+  display: grid;
   font-weight: 900;
   font-size: calc(60px + 40 * ((100vw - 320px) / 1120));
+  position: relative;
+}
+.intro__title span:last-of-type {
+  margin-left: 90px;
+}
+@media (max-width: 1200px) {
+  .intro__title span:last-of-type {
+    margin-left: calc(50px + 40 * ((100vw - 320px) / 880));
+  }
+}
+.intro__title span:last-of-type::before {
+  content: "";
+  position: absolute;
+  background: url("../img/intro/icons/01.svg") 0 0/cover no-repeat;
+  width: 90px;
+  height: 100px;
+  bottom: 18%;
+  left: 0;
+  z-index: -1;
+}
+@media (max-width: 1200px) {
+  .intro__title span:last-of-type::before {
+    width: calc(50px + 40 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .intro__title span:last-of-type::before {
+    height: calc(60px + 40 * ((100vw - 320px) / 880));
+  }
 }
 .intro__sub-title {
   font-weight: 700;

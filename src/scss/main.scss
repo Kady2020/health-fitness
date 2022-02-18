@@ -434,8 +434,27 @@ body {
   }
 
   &__title {
+    display: grid;
     font-weight: 900;
     @include respValue('font-size', 100, 60, 0);
+    position: relative;
+
+    span {
+      &:last-of-type {
+        @include respValue('margin-left', 90, 50, 1);
+
+        &::before {
+          content: '';
+          position: absolute;
+          background: url('@img/intro/icons/01.svg') 0 0 / cover no-repeat;
+          @include respValue('width', 90, 50, 1);
+          @include respValue('height', 100, 60, 1);
+          bottom: 18%;
+          left: 0;
+          z-index: -1;
+        }
+      }
+    }
   }
 
   &__sub-title {
