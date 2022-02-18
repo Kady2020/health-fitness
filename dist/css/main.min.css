@@ -567,12 +567,16 @@ body {
   border: 1px solid #333;
   border-radius: 5px;
   min-height: 58px;
+  padding: 0 7px;
   font-size: 17px;
   line-height: 1.2;
   color: #333;
 }
 .intro__get-started-input:not(:last-child) {
   margin: 0 0 10px 0;
+}
+.intro__get-started-input:focus {
+  box-shadow: 0 0 10px 0 #555;
 }
 @media (min-width: 767.98px) {
   .intro__get-started-input {
