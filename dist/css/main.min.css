@@ -243,7 +243,7 @@ body {
     animation: highlight 0.4s linear;
   }
 }
-.main-button__item {
+.main-button__span-item {
   position: relative;
   z-index: 5;
 }
@@ -317,8 +317,13 @@ body {
 }
 .header__body {
   display: grid;
-  grid-template: minmax(100px, auto)/auto 1fr minmax(auto, 236px);
+  grid-template: minmax(auto, 100px)/auto 1fr minmax(auto, 236px);
   align-items: center;
+}
+@media (max-width: 768px) {
+  .header__body {
+    grid-template-rows: minmax(auto, 70px);
+  }
 }
 .header__logo {
   grid-column: 1/2;
@@ -374,7 +379,7 @@ body {
 @media (max-width: 992px) {
   .header__authorization {
     position: absolute;
-    top: -100%;
+    top: -200%;
     left: 50%;
     transform: translateX(-50%);
     transition: all 0.3s linear;
@@ -457,3 +462,74 @@ body {
 }
 
 /*==================== HEADER ====================*/
+/*==================== INTRO ====================*/
+.intro {
+  position: relative;
+}
+.intro__body {
+  display: grid;
+  justify-items: center;
+  padding: 70px 0 0 0;
+}
+@media (min-width: 767.98px) {
+  .intro__body {
+    grid-template: 1fr/repeat(2, 1fr);
+    align-items: center;
+  }
+}
+@media (max-width: 767.98px) {
+  .intro__content {
+    grid-row: 2/3;
+  }
+}
+.intro__title {
+  font-weight: 900;
+  font-size: calc(60px + 40 * ((100vw - 320px) / 1120));
+}
+.intro__sub-title {
+  font-weight: 700;
+}
+.intro__image {
+  max-width: 550px;
+  position: relative;
+}
+.intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 992px) {
+  .intro__image::before {
+    content: "";
+    position: absolute;
+    background: url("../img/intro/icons/02.svg") 0 0/600px no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 60px;
+    left: -350px;
+    z-index: -1;
+  }
+  .intro__image::after {
+    content: "";
+    position: absolute;
+    background: url("../img/intro/icons/03.svg") 0 0/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    top: -120px;
+    left: 250px;
+    z-index: -1;
+  }
+}
+@media (max-width: 767.98px) {
+  .intro__image {
+    grid-row: 1/2;
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 767.98px) and (max-width: 1200px) {
+  .intro__image {
+    margin-bottom: calc(30px + 30 * ((100vw - 320px) / 880));
+  }
+}
+
+/*==================== INTRO ====================*/

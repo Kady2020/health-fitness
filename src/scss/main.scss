@@ -1,9 +1,9 @@
 /*==================== RESET STYLES ====================*/
-@import 'reset';
+@import 'import/reset.scss';
 /*==================== RESET STYLES ====================*/
 
 /*==================== FONTS ====================*/
-@import 'fonts';
+@import 'import/fonts.scss';
 /*==================== FONTS ====================*/
 
 /*==================== VARIABLES ====================*/
@@ -13,21 +13,6 @@ $circularFont: 'Circular', sans-serif;
 /*==================== VARIABLES ====================*/
 
 /*==================== MIXINS ====================*/
-
-// responsive font
-@mixin respFz($pcSize, $mobSize) {
-  $addSize: $pcSize - $mobSize;
-  $addMobSize: $addSize + $addSize * 0.7;
-  @media (max-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidthContainer}));
-  }
-  @media (min-width: 767px) {
-    font-size: calc(#{$mobSize + px} + #{$addSize} * (100vw / #{$maxWidthContainer}));
-  }
-}
-// @include respFz(40, 14);
-// responsive font
-
 // responsive value
 @mixin respValue($property, $startSize, $minSize, $type) {
   $addSize: $startSize - $minSize;
@@ -50,7 +35,6 @@ $circularFont: 'Circular', sans-serif;
 }
 // @include respValue('padding', 30, 15, 1);
 // responsive value
-
 /*==================== MIXINS ====================*/
 
 /*==================== BASIC PARAMETERS ====================*/
@@ -90,7 +74,7 @@ body {
 // container
 
 // responsive background image
-@import 'ibg';
+@import 'import/ibg.scss';
 
 .ibg {
   position: relative;
@@ -177,7 +161,7 @@ body {
     }
   }
 
-  &__item {
+  &__span-item {
     position: relative;
     z-index: 5;
   }
@@ -265,8 +249,11 @@ body {
 
   &__body {
     display: grid;
-    grid-template: minmax(100px, auto) / auto 1fr minmax(auto, 236px);
+    grid-template: minmax(auto, 100px) / auto 1fr minmax(auto, 236px);
     align-items: center;
+    @media (max-width: 768px) {
+      grid-template-rows: minmax(auto, 70px);
+    }
   }
 
   &__logo {
@@ -330,7 +317,7 @@ body {
 
     @media (max-width: 992px) {
       position: absolute;
-      top: -100%;
+      top: -200%;
       left: 50%;
       transform: translateX(-50%);
       transition: all 0.3s linear;
@@ -424,3 +411,87 @@ body {
   }
 }
 /*==================== HEADER ====================*/
+
+/*==================== INTRO ====================*/
+.intro {
+  position: relative;
+
+  &__body {
+    display: grid;
+    justify-items: center;
+    padding: 70px 0 0 0;
+
+    @media (min-width: 767.98px) {
+      grid-template: 1fr / repeat(2, 1fr);
+      align-items: center;
+    }
+  }
+
+  &__content {
+    @media (max-width: 767.98px) {
+      grid-row: 2/3;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    @include respValue('font-size', 100, 60, 0);
+  }
+
+  &__sub-title {
+    font-weight: 700;
+  }
+
+  &__text {
+  }
+
+  &__get-started-form {
+  }
+
+  &__get-started-input {
+  }
+
+  &__get-started-button {
+  }
+
+  &__image {
+    max-width: 550px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 992px) {
+      &::before {
+        content: '';
+        position: absolute;
+        background: url('@img/intro/icons/02.svg') 0 0 / 600px no-repeat;
+        width: 100%;
+        height: 100%;
+        top: 60px;
+        left: -350px;
+        z-index: -1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: url('@img/intro/icons/03.svg') 0 0 / cover no-repeat;
+        width: 100%;
+        height: 100%;
+        top: -120px;
+        left: 250px;
+        z-index: -1;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      grid-row: 1/2;
+      @include respValue('margin-bottom', 60, 30, 1);
+    }
+  }
+}
+/*==================== INTRO ====================*/
