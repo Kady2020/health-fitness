@@ -225,10 +225,18 @@ body {
 
   &__title {
     @include respValue('font-size', 65, 45, 1);
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 30, 20, 1);
+    }
   }
 
   &__sub-title {
     @include respValue('font-size', 20, 18, 1);
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 30, 20, 1);
+    }
   }
 
   &_center {
@@ -613,14 +621,14 @@ body {
   &__container {
     position: relative;
 
-    @media (min-width: 767.98px) {
+    @media (min-width: 1220px) {
       &::before {
         content: '';
         background: url('@img/dots.svg') 0 0 / cover no-repeat;
         position: absolute;
         width: 158px;
         height: 184px;
-        top: 100%;
+        top: 80%;
         left: -10%;
       }
     }
@@ -694,3 +702,248 @@ body {
   }
 }
 /*==================== PARTNERS ====================*/
+
+/*==================== TWO BLOCKS ====================*/
+.page {
+  &__two-blocks {
+    @include respValue('padding-top', 80, 40, 1);
+    @include respValue('padding-bottom', 120, 30, 1);
+    @include respValue('margin-top', 490, 430, 1);
+  }
+}
+
+.two-blocks {
+  position: relative;
+
+  &::before {
+    content: '';
+    background: rgba(255, 229, 0, 0.1);
+    border-radius: 0 300px 0 0;
+    position: absolute;
+    width: 84%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__body {
+    display: grid;
+  }
+
+  &__about-us {
+    margin: -400px 0 0 0;
+
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__what-we-do {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+
+  @media (min-width: 767.98px) {
+    &__body {
+      grid-template: 1fr / repeat(2, 1fr);
+      @include respValue('column-gap', 40, 20, 1);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &::before {
+      border-radius: 0;
+      width: 100%;
+    }
+  }
+}
+
+// FIRST BLOCK ABOUT US
+.about-us {
+  &__header {
+    margin: 0 0 40px 0;
+  }
+
+  &__image {
+    position: relative;
+    max-width: 510px;
+    margin: 0 0 70px 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 200px 0 0 0;
+      overflow: hidden;
+    }
+  }
+
+  &__text {
+    max-width: 510px;
+    @include respValue('font-size', 20, 18, 1);
+    line-height: 1.2;
+    color: #555;
+
+    p {
+      &:not(:last-child) {
+        @include respValue('margin-bottom', 30, 15, 1);
+      }
+    }
+  }
+
+  @media (min-width: 1220px) {
+    &__image {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 20px;
+        left: -20px;
+        border: 1.2px solid #333;
+        border-radius: 200px 0 0 0;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    &__header {
+      max-width: 490px;
+    }
+  }
+
+  @media (min-width: 767.98px) {
+    &__header {
+      @include respValue('margin-bottom', 70, 40, 1);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &__header {
+      text-align: center;
+    }
+
+    &__image {
+      max-width: 630px;
+      margin: 0 auto;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 10px;
+        left: -10px;
+        border: 1.2px solid #333;
+        border-radius: 200px 0 0 0;
+      }
+    }
+
+    &__text {
+      max-width: 610px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 425px) {
+    &__image {
+      img {
+        border-radius: 130px 0 0 0;
+      }
+
+      &::before {
+        border-radius: 130px 0 0 0;
+      }
+    }
+  }
+}
+
+// SECOND BLOCK WHAT WE DO
+.what-we-do {
+  &__header {
+    margin: 0 0 40px 0;
+  }
+
+  &__image {
+    position: relative;
+    max-width: 590px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0 0 200px 0;
+      overflow: hidden;
+    }
+  }
+
+  @media (min-width: 1220px) {
+    &__image {
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 20px;
+        left: 20px;
+        border: 1.2px solid #333;
+        border-radius: 0 0 200px 0;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    &__header {
+      max-width: 420px;
+    }
+  }
+
+  @media (min-width: 767.98) {
+    &__header {
+      @include respValue('margin-bottom', 140, 80, 1);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    &__header {
+      text-align: center;
+    }
+
+    &__image {
+      max-width: 630px;
+      margin: 0 auto;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 10px;
+        left: 10px;
+        border: 1.2px solid #333;
+        border-radius: 0 0 200px 0;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    img {
+      border-radius: 0 0 130px 0;
+    }
+
+    &::before {
+      border-radius: 0 0 130px 0;
+    }
+  }
+}
+/*==================== TWO BLOCKS ====================*/
