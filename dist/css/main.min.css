@@ -131,10 +131,8 @@ body {
   background: #fff;
   color: #333;
 }
-@media (max-width: 992px) {
-  body.lock {
-    overflow: hidden;
-  }
+body.lock {
+  overflow: hidden;
 }
 
 .wrapper {
@@ -202,46 +200,42 @@ body {
   color: white;
   box-shadow: 0px 100px 80px rgba(49, 49, 49, 0.1), 0px 64.8148px 46.8519px rgba(49, 49, 49, 0.0759259), 0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05), 0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
 }
-@media (min-width: 767.98px) {
-  .main-button_bg_gray::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: #555555;
-    border-radius: 5px;
-    opacity: 0;
-    transform: scale(0);
-    transform-origin: center;
-    transition: all 0.2s linear;
-  }
-  .main-button_bg_gray:hover::before {
-    opacity: 1;
-    transform: scale(1);
-  }
+.main-button_bg_gray::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #555555;
+  border-radius: 5px;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.2s linear;
+}
+.main-button_bg_gray:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 .main-button_bg_transp {
   border: 2px solid #333333;
   background: rgba(255, 255, 255, 0);
   color: #333333;
 }
-@media (min-width: 767.98px) {
-  .main-button_bg_transp::before {
-    content: "";
-    position: absolute;
-    width: 2em;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(238, 238, 238, 0.5);
-    transform: translateX(-4em) skewX(-45deg);
-    transition: all 0.4s linear;
-  }
-  .main-button_bg_transp:hover::before {
-    animation: highlight 0.4s linear;
-  }
+.main-button_bg_transp::before {
+  content: "";
+  position: absolute;
+  width: 2em;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(238, 238, 238, 0.7);
+  transform: translateX(-4em) skewX(-45deg);
+  transition: all 0.4s linear;
+}
+.main-button_bg_transp:hover::before {
+  animation: highlight 0.4s linear;
 }
 .main-button__span-item {
   position: relative;
@@ -261,27 +255,25 @@ body {
   display: inline-block;
   transition: all 0.2s linear;
 }
-@media (min-width: 767.98px) {
-  .link-button::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 1.1px;
-    bottom: -2px;
-    left: 0;
-    background: #333;
-    opacity: 0;
-    transform: scale(0);
-    transform-origin: center;
-    transition: all 0.2s linear;
-  }
-  .link-button:hover {
-    color: #555;
-  }
-  .link-button:hover::before {
-    opacity: 1;
-    transform: scale(1);
-  }
+.link-button::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1.1px;
+  bottom: -2px;
+  left: 0;
+  background: #333;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  transition: all 0.2s linear;
+}
+.link-button:hover {
+  color: #555;
+}
+.link-button:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .page__intro, .page__partners {
@@ -431,6 +423,12 @@ body {
     color: #fff;
   }
 }
+.header__menu-link.active::before {
+  background: #fff;
+}
+.header__menu-link.active:hover {
+  color: #fff;
+}
 .header__authorization {
   grid-column: 3/4;
   display: grid;
@@ -457,11 +455,17 @@ body {
 }
 @media (max-width: 767.98px) {
   .header__sign-in {
-    justify-self: stretch;
+    justify-self: center;
     text-align: center;
     font-size: 21px;
     color: #fff;
     margin: 0;
+  }
+  .header__sign-in::before {
+    background: #fff;
+  }
+  .header__sign-in:hover {
+    color: #fff;
   }
 }
 @media (max-width: 767.98px) {
@@ -471,6 +475,10 @@ body {
     background: #fff;
     box-shadow: none;
     color: #333;
+  }
+  .header__sign-up:hover::before {
+    opacity: 0;
+    transform: scale(0);
   }
 }
 .header__burger {
@@ -508,6 +516,9 @@ body {
   }
   .header__burger::after {
     bottom: 0;
+  }
+  .header__burger:active span, .header__burger:active::before, .header__burger:active::after {
+    background: #999;
   }
   .header__burger.active span {
     transform: scale(0);
@@ -617,6 +628,7 @@ body {
 }
 .intro__get-started-form {
   display: grid;
+  max-width: 500px;
   width: 100%;
 }
 @media (min-width: 767.98px) {
