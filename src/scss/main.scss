@@ -110,7 +110,7 @@ body {
       0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05),
       0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
 
-    @media (min-width: 768px) {
+    @media (min-width: 767.98px) {
       &::before {
         content: '';
         position: absolute;
@@ -140,7 +140,7 @@ body {
     background: rgba(255, 255, 255, 0);
     color: rgba(51, 51, 51, 1);
 
-    @media (min-width: 768px) {
+    @media (min-width: 767.98px) {
       &::before {
         content: '';
         position: absolute;
@@ -183,7 +183,7 @@ body {
   display: inline-block;
   transition: all 0.2s linear;
 
-  @media (min-width: 768px) {
+  @media (min-width: 767.98px) {
     &::before {
       content: '';
       position: absolute;
@@ -209,6 +209,14 @@ body {
   }
 }
 // main button
+
+// page margin-bottom
+.page {
+  &__intro {
+    @include respValue('margin-bottom', 150, 60, 1);
+  }
+}
+// page margin-bottom
 
 /*==================== REPEAT BLOCK ====================*/
 
@@ -301,12 +309,6 @@ body {
       text-align: center;
       color: #fff;
     }
-  }
-
-  &__menu-item {
-  }
-
-  &__menu-link {
   }
 
   &__authorization {
