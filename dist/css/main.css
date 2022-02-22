@@ -276,11 +276,11 @@ body.lock {
   transform: scale(1);
 }
 
-.page__intro, .page__partners, .page__two-blocks, .page__how-it-works {
+.page__intro, .page__partners, .page__two-blocks, .page__how-it-works, .page__faqs {
   margin-bottom: 150px;
 }
 @media (max-width: 1200px) {
-  .page__intro, .page__partners, .page__two-blocks, .page__how-it-works {
+  .page__intro, .page__partners, .page__two-blocks, .page__how-it-works, .page__faqs {
     margin-bottom: calc(60px + 90 * ((100vw - 320px) / 880));
   }
 }
@@ -1053,7 +1053,12 @@ body.lock {
   }
 }
 .how-it-works__header {
-  margin: 0 0 40px 0;
+  margin-bottom: 60px;
+}
+@media (max-width: 1200px) {
+  .how-it-works__header {
+    margin-bottom: calc(40px + 20 * ((100vw - 320px) / 880));
+  }
 }
 @media (max-width: 767.98px) {
   .how-it-works__header {
@@ -1135,3 +1140,60 @@ body.lock {
 }
 
 /*==================== HOW IT WORKS ====================*/
+/*==================== FAQs ====================*/
+.faqs__header {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+@media (max-width: 1200px) {
+  .faqs__header {
+    margin-bottom: calc(40px + 20 * ((100vw - 320px) / 880));
+  }
+}
+.faqs__body {
+  background: rgba(255, 229, 0, 0.1);
+}
+.faqs__container {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  display: grid;
+  row-gap: 20px;
+}
+@media (max-width: 1200px) {
+  .faqs__container {
+    padding-top: calc(40px + 50 * ((100vw - 320px) / 880));
+  }
+}
+@media (max-width: 1200px) {
+  .faqs__container {
+    padding-bottom: calc(40px + 50 * ((100vw - 320px) / 880));
+  }
+}
+@media (min-width: 767.98px) {
+  .faqs__container {
+    grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+.faqs__item {
+  background: #fff;
+  box-shadow: 0px 20px 50px rgba(49, 49, 49, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+@media (max-width: 1200px) {
+  .faqs__item {
+    padding: calc(20px + 10 * ((100vw - 320px) / 880));
+  }
+}
+.faqs__title {
+  font-weight: 700;
+}
+.faqs__title:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+
+/*==================== FAQs ====================*/

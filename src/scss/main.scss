@@ -208,7 +208,8 @@ body {
   &__intro,
   &__partners,
   &__two-blocks,
-  &__how-it-works {
+  &__how-it-works,
+  &__faqs {
     @include respValue('margin-bottom', 150, 60, 1);
   }
 }
@@ -1018,7 +1019,7 @@ body {
   }
 
   &__header {
-    margin: 0 0 40px 0;
+    @include respValue(margin-bottom, 60, 40, 1);
 
     @media (max-width: 767.98px) {
       text-align: center;
@@ -1093,3 +1094,46 @@ body {
   }
 }
 /*==================== HOW IT WORKS ====================*/
+
+/*==================== FAQs ====================*/
+.faqs {
+  &__header {
+    max-width: 720px;
+    margin: 0 auto;
+    @include respValue(margin-bottom, 60, 40, 1);
+  }
+
+  &__body {
+    background: rgba(255, 229, 0, 0.1);
+  }
+
+  &__container {
+    @include respValue(padding-top, 90, 40, 1);
+    @include respValue(padding-bottom, 90, 40, 1);
+    display: grid;
+    row-gap: 20px;
+
+    @media (min-width: 767.98px) {
+      grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+      gap: 30px;
+    }
+  }
+
+  &__item {
+    background: #fff;
+    box-shadow: 0px 20px 50px rgba(49, 49, 49, 0.1);
+    border-radius: 10px;
+    @include respValue('padding', 30, 20, 1);
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  &__title {
+    font-weight: 700;
+
+    &:not(:last-child) {
+      margin: 0 0 30px 0;
+    }
+  }
+}
+/*==================== FAQs ====================*/
