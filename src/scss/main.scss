@@ -206,7 +206,9 @@ body {
 // page margin-bottom
 .page {
   &__intro,
-  &__partners {
+  &__partners,
+  &__two-blocks,
+  &__how-it-works {
     @include respValue('margin-bottom', 150, 60, 1);
   }
 }
@@ -736,7 +738,7 @@ body {
 .page {
   &__two-blocks {
     @include respValue('padding-top', 80, 40, 1);
-    @include respValue('padding-bottom', 120, 30, 1);
+    @include respValue('padding-bottom', 80, 40, 1);
     @include respValue('margin-top', 490, 430, 1);
   }
 }
@@ -756,6 +758,22 @@ body {
     z-index: -1;
   }
 
+  &__container {
+    position: relative;
+
+    @media (min-width: 1220px) {
+      &::before {
+        content: '';
+        background: url('@img/dots.svg') 0 0 / cover no-repeat;
+        position: absolute;
+        width: 158px;
+        height: 184px;
+        top: 96%;
+        left: -14%;
+      }
+    }
+  }
+
   &__body {
     display: grid;
   }
@@ -763,8 +781,10 @@ body {
   &__about-us {
     margin: -400px 0 0 0;
 
-    &:not(:last-child) {
-      margin-bottom: 60px;
+    @media (max-width: 767.98px) {
+      &:not(:last-child) {
+        margin-bottom: 60px;
+      }
     }
   }
 
@@ -789,7 +809,7 @@ body {
   }
 }
 
-// FIRST BLOCK ABOUT US
+//! FIRST BLOCK - ABOUT US
 .about-us {
   &__header {
     margin: 0 0 40px 0;
@@ -845,6 +865,7 @@ body {
 
   @media (min-width: 767.98px) {
     &__header {
+      padding: 0 0 0 40px;
       @include respValue('margin-bottom', 70, 40, 1);
     }
   }
@@ -893,7 +914,7 @@ body {
   }
 }
 
-// SECOND BLOCK WHAT WE DO
+//! SECOND BLOCK - WHAT WE DO
 .what-we-do {
   &__header {
     margin: 0 0 40px 0;
@@ -976,3 +997,99 @@ body {
   }
 }
 /*==================== TWO BLOCKS ====================*/
+
+/*==================== HOW IT WORKS ====================*/
+.how-it-works {
+  &__body {
+    display: grid;
+
+    @media (min-width: 767.98px) {
+      grid-template: 1fr / repeat(2, 1fr);
+      @include respValue('column-gap', 100, 50, 0);
+    }
+  }
+
+  &__content {
+    @media (max-width: 767.98px) {
+      &:not(:last-child) {
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+
+  &__header {
+    margin: 0 0 40px 0;
+
+    @media (max-width: 767.98px) {
+      text-align: center;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 30px;
+    max-width: 432px;
+
+    @media (max-width: 767.98px) {
+      margin: 0 auto;
+    }
+  }
+
+  &__spoiler {
+    @media (max-width: 767.98px) {
+      &:not(:last-child) {
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+}
+
+.spoiler {
+  &__item {
+    font-size: 18px;
+    line-height: 1.2;
+    background: #fff;
+    box-shadow: 0px 20px 50px rgba(49, 49, 49, 0.1);
+    @include respValue('padding', 40, 20, 1);
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 30, 15, 1);
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-weight: 700;
+    @include respValue('padding-right', 60, 30, 1);
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #333;
+      transition: all 0.3s linear;
+    }
+
+    &::before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &.active {
+      &::before {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &__text {
+    max-width: 382px;
+    @include respValue('margin-top', 30, 15, 1);
+  }
+}
+/*==================== HOW IT WORKS ====================*/
