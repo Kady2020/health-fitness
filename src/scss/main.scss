@@ -210,7 +210,7 @@ body {
   &__two-blocks,
   &__how-it-works,
   &__faqs {
-    @include respValue('margin-bottom', 150, 60, 1);
+    @include respValue('margin-bottom', 150, 80, 1);
   }
 }
 // page margin-bottom
@@ -486,34 +486,42 @@ body {
 
 /*==================== INTRO ====================*/
 .intro {
-  position: relative;
-
   &__body {
     display: grid;
-    justify-items: center;
-    padding: 70px 0 0 0;
+    padding: 120px 0 0 0;
 
     @media (min-width: 767.98px) {
-      grid-template: 1fr / repeat(2, 1fr);
-      align-items: center;
+      grid-template: repeat(2, auto) / repeat(2, 1fr);
+      padding: 90px 0 0 0;
+    }
+
+    @media (max-width: 767.98px) {
+      justify-items: center;
+
+      > *:not(:last-child) {
+        @include respValue('margin-bottom', 60, 30, 1);
+      }
     }
   }
 
   &__content {
+    display: grid;
+
     @media (min-width: 767.98px) {
+      grid-row: 1/2;
+      grid-column: 1/2;
+      align-self: end;
       padding: 0 15px 0 0;
     }
 
     @media (max-width: 767.98px) {
-      grid-row: 2/3;
-      display: inline-grid;
       justify-items: center;
     }
   }
 
   &__title {
     position: relative;
-    display: inline-grid;
+    display: grid;
     font-weight: 900;
     @include respValue('font-size', 100, 60, 1);
 
@@ -557,9 +565,43 @@ body {
     }
   }
 
-  &__text {
-    &:not(:last-child) {
-      @include respValue('margin-bottom', 60, 40, 1);
+  &__image {
+    position: relative;
+    max-width: 550px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: 992px) {
+      &::before {
+        content: '';
+        position: absolute;
+        background: url('@img/intro/icons/02.svg') 0 0 / 600px no-repeat;
+        width: 100%;
+        height: 100%;
+        top: 60px;
+        left: -350px;
+        z-index: -1;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        background: url('@img/intro/icons/03.svg') 0 0 / cover no-repeat;
+        width: 100%;
+        height: 100%;
+        top: -120px;
+        left: 250px;
+        z-index: -1;
+      }
+    }
+
+    @media (min-width: 767.98px) {
+      grid-row: 1/3;
+      grid-column: 2/3;
     }
   }
 
@@ -569,7 +611,12 @@ body {
     width: 100%;
 
     @media (min-width: 767.98px) {
+      grid-row: 2/3;
+      grid-column: 1/2;
+      align-self: start;
       grid-template: 1fr / 1fr minmax(auto, 35.2%);
+      padding: 0 15px 0 0;
+      @include respValue('padding-top', 60, 40, 1);
     }
   }
 
@@ -605,46 +652,6 @@ body {
       border-radius: 0 5px 5px 0;
     }
   }
-
-  &__image {
-    max-width: 550px;
-    position: relative;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (min-width: 992px) {
-      &::before {
-        content: '';
-        position: absolute;
-        background: url('@img/intro/icons/02.svg') 0 0 / 600px no-repeat;
-        width: 100%;
-        height: 100%;
-        top: 60px;
-        left: -350px;
-        z-index: -1;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        background: url('@img/intro/icons/03.svg') 0 0 / cover no-repeat;
-        width: 100%;
-        height: 100%;
-        top: -120px;
-        left: 250px;
-        z-index: -1;
-      }
-    }
-
-    @media (max-width: 767.98px) {
-      grid-row: 1/2;
-      @include respValue('margin-bottom', 60, 30, 1);
-    }
-  }
 }
 /*==================== INTRO ====================*/
 
@@ -653,15 +660,39 @@ body {
   &__container {
     position: relative;
 
-    @media (min-width: 1220px) {
+    &::before {
+      content: '';
+      background: url('@img/dots.svg') 0 0 / cover no-repeat;
+      position: absolute;
+      width: 158px;
+      height: 184px;
+      top: 80%;
+      left: -14%;
+    }
+
+    @media (max-width: 1324px) {
       &::before {
-        content: '';
-        background: url('@img/dots.svg') 0 0 / cover no-repeat;
-        position: absolute;
-        width: 158px;
-        height: 184px;
-        top: 80%;
-        left: -10%;
+        @include respValue('width', 108, 76, 1);
+        @include respValue('height', 134, 82, 1);
+        left: 1%;
+      }
+    }
+
+    @media (max-width: 992px) {
+      &::before {
+        top: 102%;
+      }
+    }
+
+    @media (max-width: 890px) {
+      &::before {
+        top: 90%;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      &::before {
+        display: none;
       }
     }
   }
@@ -676,16 +707,12 @@ body {
 
   &__content {
     @media (min-width: 992px) {
-      padding-top: 60px;
-
-      &:not(:last-child) {
-        padding-right: 30px;
-      }
+      padding: 60px 30px 0 0;
     }
 
     @media (max-width: 992px) {
       &:not(:last-child) {
-        margin: 0 0 60px 0;
+        @include respValue(margin-bottom, 60, 40, 1);
       }
     }
   }
@@ -762,15 +789,28 @@ body {
   &__container {
     position: relative;
 
-    @media (min-width: 1220px) {
+    &::before {
+      content: '';
+      background: url('@img/dots.svg') 0 0 / cover no-repeat;
+      position: absolute;
+      width: 158px;
+      height: 184px;
+      top: 96%;
+      left: -14%;
+    }
+
+    @media (max-width: 1324px) {
       &::before {
-        content: '';
-        background: url('@img/dots.svg') 0 0 / cover no-repeat;
-        position: absolute;
-        width: 158px;
-        height: 184px;
-        top: 96%;
-        left: -14%;
+        @include respValue('width', 108, 76, 1);
+        @include respValue('height', 134, 82, 1);
+        top: 104%;
+        left: 1%;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      &::before {
+        display: none;
       }
     }
   }
@@ -1013,7 +1053,7 @@ body {
   &__content {
     @media (max-width: 767.98px) {
       &:not(:last-child) {
-        margin: 0 0 30px 0;
+        @include respValue(margin-bottom, 60, 40, 1);
       }
     }
   }
@@ -1040,7 +1080,7 @@ body {
   &__spoiler {
     @media (max-width: 767.98px) {
       &:not(:last-child) {
-        margin: 0 0 30px 0;
+        @include respValue(margin-bottom, 60, 40, 1);
       }
     }
   }
