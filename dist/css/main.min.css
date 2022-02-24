@@ -125,6 +125,10 @@ h6 {
 /*==================== MIXINS ====================*/
 /*==================== MIXINS ====================*/
 /*==================== BASIC PARAMETERS ====================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Circular", sans-serif;
   font-weight: 400;

@@ -38,6 +38,10 @@ $circularFont: 'Circular', sans-serif;
 /*==================== MIXINS ====================*/
 
 /*==================== BASIC PARAMETERS ====================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $circularFont;
   font-weight: 400;
