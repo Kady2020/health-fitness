@@ -213,6 +213,7 @@ body {
   &__partners,
   &__two-blocks,
   &__how-it-works,
+  &__regular-update,
   &__faqs {
     @include respValue('margin-bottom', 150, 80, 1);
   }
@@ -1139,6 +1140,106 @@ body {
 }
 /*==================== HOW IT WORKS ====================*/
 
+/*==================== REGULAR UPDATE ====================*/
+.page {
+  &__regular-update {
+    @include respValue('margin-bottom', 160, 100, 1);
+  }
+}
+
+.regular-update {
+  &__header {
+    .header-block__title {
+      display: grid;
+    }
+
+    @include respValue(margin-bottom, 90, 40, 1);
+
+    @media (max-width: 767.98px) {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    display: grid;
+
+    @media (min-width: 767.98px) {
+      grid-template: 1fr / repeat(2, 1fr);
+      column-gap: 24px;
+    }
+
+    @media (max-width: 767.98px) {
+      row-gap: 60px;
+    }
+  }
+
+  &__item {
+    box-shadow: 0px 20px 95px rgba(201, 203, 204, 0.4);
+    border-radius: 2px;
+    @include respValue('padding-left', 40, 15, 1);
+    @include respValue('padding-right', 40, 15, 1);
+  }
+
+  &__image {
+    padding: 0 0 43.6% 0;
+    border-radius: 2px;
+    overflow: hidden;
+
+    @media (min-width: 767.98px) {
+      transform: translateY(-30px);
+      max-width: 456px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767.98px) {
+      padding: 0 0 43.6% 0;
+
+      &:not(:last-child) {
+        margin: 0 0 30px 0;
+      }
+    }
+  }
+
+  &__title-block {
+    @include respValue('font-size', 22, 18, 1);
+    line-height: 1.2;
+
+    @media (min-width: 767.98px) {
+      display: grid;
+      grid-auto-rows: 1fr;
+      max-width: 456px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 767.98px) {
+      > *:not(:last-child) {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+
+  &__new {
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #ff5f5f;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__text {
+    background: #eef7fb;
+    padding: 30px;
+    border-radius: 2px;
+    overflow: hidden;
+    @include respValue('font-size', 18, 14, 1);
+    line-height: 1.2;
+    transform: translateY(30px);
+  }
+}
+/*==================== REGULAR UPDATE ====================*/
+
 /*==================== FAQs ====================*/
 .faqs {
   &__header {
@@ -1181,3 +1282,34 @@ body {
   }
 }
 /*==================== FAQs ====================*/
+
+/*==================== WHAT CUSTOMES SAY ====================*/
+.page {
+  &__what-customes-say {
+  }
+}
+
+.what-customes-say {
+  &__header {
+    max-width: 740px;
+    margin: 0 auto;
+    @include respValue(margin-bottom, 60, 40, 1);
+  }
+
+  &__body {
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+  }
+
+  &__slider {
+  }
+
+  &__image {
+  }
+}
+
+.slider {
+  background: #333;
+  color: #fff;
+}
+/*==================== WHAT CUSTOMES SAY ====================*/
