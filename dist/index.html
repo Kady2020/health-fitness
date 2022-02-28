@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Главная</title>
   <!-- <meta name="robots" content="noindex, nofollow"> -->
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/main.min.css?_v=20220301002246">
   <link rel="shortcut icon" href="img/shortcut.png">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,7 +79,7 @@
         </p>
       </div>
       <div class="intro__image">
-        <img src="img/intro/01.png" alt="Sports girl">
+        <picture><source srcset="img/intro/01.webp" type="image/webp"><img src="img/intro/01.png" alt="Sports girl"></picture>
       </div>
       <form action="#" class="intro__get-started-form">
         <input type="email" required placeholder="Enter your email to get started" class="intro__get-started-input">
@@ -107,19 +107,19 @@
       </div>
       <div class="partners__logos">
         <div class="partners__logos-image">
-          <img src="img/partners/01.png" alt="Logo Life Fitness">
+          <picture><source srcset="img/partners/01.webp" type="image/webp"><img src="img/partners/01.png" alt="Logo Life Fitness"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/02.png" alt="Logo Cybex">
+          <picture><source srcset="img/partners/02.webp" type="image/webp"><img src="img/partners/02.png" alt="Logo Cybex"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/03.png" alt="Logo Precor">
+          <picture><source srcset="img/partners/03.webp" type="image/webp"><img src="img/partners/03.png" alt="Logo Precor"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/04.png" alt="Logo True">
+          <picture><source srcset="img/partners/04.webp" type="image/webp"><img src="img/partners/04.png" alt="Logo True"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/05.png" alt="Logo Octane">
+          <picture><source srcset="img/partners/05.webp" type="image/webp"><img src="img/partners/05.png" alt="Logo Octane"></picture>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@
           </p>
         </div>
         <div class="about-us__image">
-          <img src="img/two-blocks/about-us/01.png" alt="Sports girl">
+          <picture><source srcset="img/two-blocks/about-us/01.webp" type="image/webp"><img src="img/two-blocks/about-us/01.png" alt="Sports girl"></picture>
         </div>
         <div class="about-us__text">
           <p>
@@ -170,7 +170,7 @@
           </p>
         </div>
         <div class="what-we-do__image">
-          <img src="img/two-blocks/what-we-do/01.png" alt="Sports girl">
+          <picture><source srcset="img/two-blocks/what-we-do/01.webp" type="image/webp"><img src="img/two-blocks/what-we-do/01.png" alt="Sports girl"></picture>
         </div>
       </section>
     </div>
@@ -246,7 +246,7 @@
     <div class="regular-update__body">
       <div class="regular-update__item">
         <div class="regular-update__image ibg">
-          <img src="img/regular-update/01.png" alt="Sports girl">
+          <picture><source srcset="img/regular-update/01.webp" type="image/webp"><img src="img/regular-update/01.png" alt="Sports girl"></picture>
         </div>
         <div class="regular-update__title-block">
           <p class="regular-update__new">New !</p>
@@ -261,7 +261,7 @@
       </div>
       <div class="regular-update__item">
         <div class="regular-update__image ibg">
-          <img src="img/regular-update/02.png" alt="Sports girl">
+          <picture><source srcset="img/regular-update/02.webp" type="image/webp"><img src="img/regular-update/02.png" alt="Sports girl"></picture>
         </div>
         <div class="regular-update__title-block">
           <p class="regular-update__new"></p>
@@ -334,7 +334,7 @@
       </p>
     </div>
     <div class="what-customes-say__body">
-      <div class="what-customes-say__slider slider">
+      <div id="testimonials" class="what-customes-say__slider slider">
         <div class="slider__item">
           <div class="slider__title">Great Service!!</div>
           <div class="slider__comment">
@@ -382,7 +382,7 @@
         </div>
       </div>
       <div class="what-customes-say__image">
-        <img src="img/what-customes-say/01.png" alt="Sports guy">
+        <picture><source srcset="img/what-customes-say/01.webp" type="image/webp"><img src="img/what-customes-say/01.png" alt="Sports guy"></picture>
       </div>
     </div>
   </div>
@@ -392,13 +392,81 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+  <div class="footer__container">
+    <div class="footer__header header-block header-block_center">
+      <h2 class="header-block__title">Subscribe to our Newsletter</h2>
+    </div>
+    <form action="#" class="footer__subscribe-form">
+      <input type="email" required placeholder="Enter your email to get started" class="footer__subscribe-input">
+      <button type="submit" class="footer__subscribe-button main-button main-button_bg_transp">
+        <span class="main-button__span-item">Subscribe</span>
+      </button>
+    </form>
+    <div class="footer__body">
+      <div class="footer__item">
+        <p class="footer__title">Fitness</p>
+        <p class="footer__address">
+          Crechterwoord K12 182 DK Lorem, All Rights Reserved
+        </p>
+      </div>
+      <div class="footer__item">
+        <p class="footer__title">Links</p>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Overons</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Social Media</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Counters</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__item">
+        <p class="footer__title">Company</p>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Terms & Conditions</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Privacy Policy</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div id="contact" class="footer__item">
+        <p class="footer__title">Get in touch</p>
+        <ul class="footer__list">
+          <li class="footer__list-item">
+            <a href="#" class="footer__list-link">Crechterwoord K12 182 DK Lorem</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="tel:4805550103" class="footer__list-link">(480) 555-0103</a>
+          </li>
+          <li class="footer__list-item">
+            <a href="mailto:info@lobar.net" class="footer__list-link">info@lobar.net</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer__copyright">
+      © 2021 Fitness.co | All rights reserved
+    </p>
+  </div>
+</footer>
 
 
   </div>
 
   <!-- MAIN.JS -->
-  <script src="js/main.min.js"></script>
+  <script src="js/main.min.js?_v=20220301002246"></script>
 </body>
 
 </html>

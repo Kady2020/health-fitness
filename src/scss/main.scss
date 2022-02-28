@@ -432,6 +432,7 @@ body {
       justify-self: end;
       position: relative;
       z-index: 5;
+      cursor: pointer;
       display: grid;
       grid-template: repeat(3, 6.7px) / 30px;
 
@@ -1427,3 +1428,129 @@ body {
   align-items: flex-start; // Для включения параметра adaptiveHeight: true
 }
 /*==================== WHAT CUSTOMES SAY ====================*/
+
+/*==================== FOOTER ====================*/
+.footer {
+  background: #333;
+  padding: 0 0 24px 0;
+  @include respValue('padding-top', 180, 60, 1);
+  line-height: 1.2;
+  color: #fff;
+
+  &__header {
+    max-width: 492px;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 60, 30, 1);
+    }
+  }
+
+  &__subscribe-form {
+    display: grid;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 180, 60, 1);
+    }
+
+    @media (min-width: 767.98px) {
+      grid-template: 1fr / 1fr minmax(auto, 35.2%);
+      padding: 0 15px 0 0;
+    }
+  }
+
+  &__subscribe-input {
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    min-height: 58px;
+    padding: 0 7px;
+    font-size: 17px;
+    line-height: 1.2;
+    color: #fff;
+
+    &:not(:last-child) {
+      margin: 0 10px 0 0;
+    }
+
+    @media (max-width: 767.98px) {
+      border: 1px solid #fff;
+      border-radius: 5px;
+
+      &:not(:last-child) {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+
+  &__subscribe-button {
+    background: #fff;
+    border: 1px solid #fff;
+  }
+
+  &__body {
+    display: grid;
+    grid-template: 1fr / 2fr repeat(3, 1fr);
+    justify-content: center;
+    column-gap: 30px;
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 70, 40, 1);
+    }
+
+    @media (max-width: 992px) {
+      grid-template: 1fr / 1.5fr repeat(3, 1fr);
+    }
+
+    @media (max-width: 768.98px) {
+      grid-template-columns: repeat(auto-fit, minmax(auto, 200px));
+      row-gap: 30px;
+    }
+
+    @media (max-width: 460px) {
+      grid-template-columns: repeat(auto-fit, minmax(auto, 150px));
+      row-gap: 30px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    @include respValue('font-size', 20, 18, 1);
+
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 24, 16, 1);
+    }
+  }
+
+  &__address {
+    max-width: 192px;
+  }
+
+  &__list {
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 24, 16, 1);
+    }
+  }
+
+  &__list-item {
+    &:not(:last-child) {
+      @include respValue('margin-bottom', 24, 16, 1);
+    }
+  }
+
+  &__list-link {
+    font-size: 14px;
+
+    @media (max-width: 767.98px) {
+      font-size: 16px;
+    }
+  }
+
+  &__copyright {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+/*==================== FOOTER ====================*/
