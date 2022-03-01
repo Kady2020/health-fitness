@@ -204,6 +204,16 @@ body {
       transform: scale(1);
     }
   }
+
+  &_white {
+    &::before {
+      background: #fff;
+    }
+
+    &:hover {
+      color: #e5e5e5;
+    }
+  }
 }
 // main button
 
@@ -1109,6 +1119,7 @@ body {
 
   &__title {
     position: relative;
+    cursor: pointer;
     font-weight: 700;
     @include respValue('padding-right', 60, 30, 1);
 
@@ -1554,3 +1565,6 @@ body {
   }
 }
 /*==================== FOOTER ====================*/
+
+/*==================== POP UP ====================*/
+/*==================== POP UP ====================*/
