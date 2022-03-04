@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Главная</title>
   <!-- <meta name="robots" content="noindex, nofollow"> -->
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/main.min.css?_v=20220304164408">
   <link rel="shortcut icon" href="img/shortcut.png">
   <meta name="format-detection" content="telephone=no">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +45,7 @@
         </ul>
       </nav>
       <div class="header__authorization">
-        <a href="#" class="header__sign-in link-button">Sign in</a>
+        <a id="open-pop-up" href="#" class="header__sign-in link-button">Sign in</a>
         <a href="#" class="header__sign-up main-button main-button_bg_gray">
           <span class="main-button__span-item">Sign up</span>
         </a>
@@ -79,7 +79,7 @@
         </p>
       </div>
       <div class="intro__image">
-        <img src="img/intro/01.png" alt="Sports girl">
+        <picture><source srcset="img/intro/01.webp" type="image/webp"><img src="img/intro/01.png" alt="Sports girl"></picture>
       </div>
       <form action="#" class="intro__get-started-form">
         <input type="email" required placeholder="Enter your email to get started" class="intro__get-started-input">
@@ -107,19 +107,19 @@
       </div>
       <div class="partners__logos">
         <div class="partners__logos-image">
-          <img src="img/partners/01.png" alt="Logo Life Fitness">
+          <picture><source srcset="img/partners/01.webp" type="image/webp"><img src="img/partners/01.png" alt="Logo Life Fitness"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/02.png" alt="Logo Cybex">
+          <picture><source srcset="img/partners/02.webp" type="image/webp"><img src="img/partners/02.png" alt="Logo Cybex"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/03.png" alt="Logo Precor">
+          <picture><source srcset="img/partners/03.webp" type="image/webp"><img src="img/partners/03.png" alt="Logo Precor"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/04.png" alt="Logo True">
+          <picture><source srcset="img/partners/04.webp" type="image/webp"><img src="img/partners/04.png" alt="Logo True"></picture>
         </div>
         <div class="partners__logos-image">
-          <img src="img/partners/05.png" alt="Logo Octane">
+          <picture><source srcset="img/partners/05.webp" type="image/webp"><img src="img/partners/05.png" alt="Logo Octane"></picture>
         </div>
       </div>
     </div>
@@ -140,7 +140,7 @@
           </p>
         </div>
         <div class="about-us__image">
-          <img src="img/two-blocks/about-us/01.png" alt="Sports girl">
+          <picture><source srcset="img/two-blocks/about-us/01.webp" type="image/webp"><img src="img/two-blocks/about-us/01.png" alt="Sports girl"></picture>
         </div>
         <div class="about-us__text">
           <p>
@@ -170,7 +170,7 @@
           </p>
         </div>
         <div class="what-we-do__image">
-          <img src="img/two-blocks/what-we-do/01.png" alt="Sports girl">
+          <picture><source srcset="img/two-blocks/what-we-do/01.webp" type="image/webp"><img src="img/two-blocks/what-we-do/01.png" alt="Sports girl"></picture>
         </div>
       </section>
     </div>
@@ -246,7 +246,7 @@
     <div class="regular-update__body">
       <div class="regular-update__item">
         <div class="regular-update__image ibg">
-          <img src="img/regular-update/01.png" alt="Sports girl">
+          <picture><source srcset="img/regular-update/01.webp" type="image/webp"><img src="img/regular-update/01.png" alt="Sports girl"></picture>
         </div>
         <div class="regular-update__title-block">
           <p class="regular-update__new">New !</p>
@@ -261,7 +261,7 @@
       </div>
       <div class="regular-update__item">
         <div class="regular-update__image ibg">
-          <img src="img/regular-update/02.png" alt="Sports girl">
+          <picture><source srcset="img/regular-update/02.webp" type="image/webp"><img src="img/regular-update/02.png" alt="Sports girl"></picture>
         </div>
         <div class="regular-update__title-block">
           <p class="regular-update__new"></p>
@@ -382,7 +382,7 @@
         </div>
       </div>
       <div class="what-customes-say__image">
-        <img src="img/what-customes-say/01.png" alt="Sports guy">
+        <picture><source srcset="img/what-customes-say/01.webp" type="image/webp"><img src="img/what-customes-say/01.png" alt="Sports guy"></picture>
       </div>
     </div>
   </div>
@@ -467,13 +467,28 @@
   </div>
 
   <!-- POP UP -->
-  <div class="pop-up">
-	<div class="pop-up__container"></div>
+  <div id="pop-up" class="pop-up">
+  <div class="pop-up__container">
+    <div id="body-pop-up" class="pop-up__body">
+      <p class="pop-up__title">
+        <span>Health</span>
+        <span>Fitness</span>
+      </p>
+      <form action="#" class="pop-up__form">
+        <input class="pop-up__username" type="email" name="username" placeholder="Username" required>
+        <input class="pop-up__password" type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="pop-up__button main-button main-button_bg_gray">
+          <span class="main-button__span-item">Sign in</span>
+        </button>
+      </form>
+      <div id="close-pop-up" class="pop-up__close">&#10006</div>
+    </div>
+  </div>
 </div>
 
 
   <!-- MAIN.JS -->
-  <script src="js/main.min.js"></script>
+  <script src="js/main.min.js?_v=20220304164408"></script>
 </body>
 
 </html>

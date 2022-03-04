@@ -8,4 +8,4 @@ import "./modules/slick-slider.js";
 import "./modules/burger-menu.js";
 import "./modules/header-scroll.js";
 import "./modules/spoiler-accordion.js";
-
+import "./modules/pop-up.js";
