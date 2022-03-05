@@ -1574,8 +1574,8 @@ body {
   top: 0;
   left: 0;
   z-index: 200;
-  transform: translateY(-52%) scale(0);
-  transition: all 0.3s ease-in-out;
+  transform: translateY(-100%) scale(0);
+  transition: all 0.3s linear;
 
   &.active {
     background: rgba(51, 51, 51, 0.9);

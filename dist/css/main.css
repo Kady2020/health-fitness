@@ -1188,12 +1188,12 @@ body.lock {
   top: 0;
   left: 0;
   z-index: 200;
-  -webkit-transform: translateY(-52%) scale(0);
-      -ms-transform: translateY(-52%) scale(0);
-          transform: translateY(-52%) scale(0);
-  -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transform: translateY(-100%) scale(0);
+      -ms-transform: translateY(-100%) scale(0);
+          transform: translateY(-100%) scale(0);
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .pop-up.active {
